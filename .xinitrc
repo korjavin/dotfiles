@@ -7,8 +7,4 @@
 #enlightenment
 #gnome-terminal
 #dwm
-#playonlinux --run ga
-#lxterminal
 awesome
-#stellarium
-#dwm

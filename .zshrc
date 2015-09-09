@@ -24,7 +24,7 @@ DISABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(history-substring-search gitfast last-working-dir sudo)
+plugins=(history-substring-search gitfast last-working-dir sudo perl symfony systemd docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,7 +47,7 @@ export EDITOR=vim
 #bindkey '^[[B' down-line-or-history-beginning-search
 #bindkey '^U' kill-region
 bindkey '^W' backward-kill-word
-WORDCHARS='/.-_'
+WORDCHARS='/.-_:'
 
 case $TERM in
      xterm* | rxvt)
