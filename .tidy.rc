@@ -1,0 +1,7 @@
+force-output: yes
+show-errors: 0
+show-warnings: 0
+char-encoding: raw
+quiet: yes
+indent: yes
+wrap: 0

@@ -62,3 +62,17 @@ alias pd='perldoc'
 export CDPATH=.:~
 
 bindkey '^Xe' edit-command-line
+
+alias ss='screen'
+alias s='screen -x'
+alias sw='screen -wipe'
+
+alias tm='tail -f /var/log/messages'
+alias ts='tail -f /var/log/daemon.log'
+alias ta='tail -f /var/log/all.log'
+alias taa='tail -f /var/log/auth.log'
+alias te='tail -f /var/log/exim4/mainlog'
+
+# added by travis gem
+[ -f /home/iv/.travis/travis.sh ] && source /home/iv/.travis/travis.sh
+export GOPATH=/home/iv/Projects/go

@@ -1,0 +1,49 @@
+[merge]
+	tool = gvimdiff
+	summary = true
+[gui]
+	fontui = -family verdana -size 10 -weight bold -slant roman -underline 0 -overstrike 0
+	fontdiff = -family terminus -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	spellingdictionary = none
+	wmstate = normal
+	geometry = 1278x467+0+521 430 192
+[user]
+	name = Korjavin Ivan\n
+	email = korjavin@gmail.com
+[alias]
+    df=diff --no-ext-diff -w
+    st=status
+    co=checkout
+    br=branch
+    ci=commit -a -m
+    cid=commit -a
+    cm=commit -m
+    cif=commit -a -m fix
+    ci1= commit -a -m 1
+#    ci1="!g() { perl -Mojo -E \"say g('http://whatthecommit.com/')->dom->at('div#content p')->text\" }; f() { git commit -a -m ""`g`"" }; f"
+#    lg=log --graph -n 20 --color -s
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lgg =log  --graph -n 20 --stat --color --show-notes
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+    graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+    fix=commit --all --amend
+    files = "!f() { git show --pretty="format:" --name-only $1..HEAD | sort |uniq ; }; f"
+    aa = add --all
+    ignored = !git ls-files -v | grep "^[[:lower:]]"
+	it = !git init && git commit -m “root” --allow-empty
+	stsh = stash --keep-index #stash only unstaged changes to tracked files
+	staash = stash --include-untracked #stash untracked and tracked files
+	staaash = stash --all #stash ignored, untracked, and tracked files 
+
+[github]
+	user = korjavin
+[gist.github]
+	user = korjavin
+[push]
+	default = current
+#[core]
+#	excludesfile = /home/iv/Projects/exclude.git
+[core]
+	autocrlf = false
+	whitespace = cr-at-eol
