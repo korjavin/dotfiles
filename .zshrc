@@ -24,13 +24,13 @@ DISABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(history-substring-search gitfast last-working-dir sudo perl symfony systemd docker)
+plugins=(history-substring-search gitfast last-working-dir sudo symfony systemd docker go cpv screen)
 
 source $ZSH/oh-my-zsh.sh
 
 
 # Customize to your needs...
-PATH=$PATH:~/bin:/usr/sbin:/sbin
+PATH=/usr/local/go/bin:$PATH:~/bin:/usr/sbin:/sbin:~/Projects/go/bin/
 export EDITOR=vim
 
 #bindkey "^N" history-search-forward
@@ -56,8 +56,6 @@ case $TERM in
     esac
 
 setopt HIST_IGNORE_SPACE
-
-alias pd='perldoc'
 
 export CDPATH=.:~
 

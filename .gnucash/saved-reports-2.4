@@ -1,0 +1,289 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "График год", based on template "80769921e87943adade887b9835a7685"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "80769921e87943adade887b9835a7685" "Income/Expense Chart")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "График год"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(relative . start-prev-quarter)))) option))
+
+
+; Section: Accounts
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Plot Height")))
+  ((lambda (option) (if option ((gnc:option-setter option) 600.0))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Plot Width")))
+  ((lambda (option) (if option ((gnc:option-setter option) 1000.0))) option))
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "График год"
+  'report-guid "1c98b6fd23e8d3596e4cd3c16407ddb9"
+  'parent-type "80769921e87943adade887b9835a7685"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "80769921e87943adade887b9835a7685" "Income/Expense Chart")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Счета доходов", based on template "e1bd09b8a1dd49dd85760db9d82b045c"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "e1bd09b8a1dd49dd85760db9d82b045c" "Income Accounts")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(relative . today)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(relative . start-this-month)))) option))
+
+
+; Section: Accounts
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Plot Width")))
+  ((lambda (option) (if option ((gnc:option-setter option) 1000.0))) option))
+
+
+; Section: __report
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Счета доходов"
+  'report-guid "20dd587495eba870745a8ce2aa500b4e"
+  'parent-type "e1bd09b8a1dd49dd85760db9d82b045c"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "e1bd09b8a1dd49dd85760db9d82b045c" "Income Accounts")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Расход со временем", based on template "b1f15b2052c149df93e698fe85a81ea6"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "b1f15b2052c149df93e698fe85a81ea6" "Expense Over Time")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(relative . start-prev-quarter)))) option))
+
+
+; Section: Accounts
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Plot Height")))
+  ((lambda (option) (if option ((gnc:option-setter option) 800.0))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Plot Width")))
+  ((lambda (option) (if option ((gnc:option-setter option) 1200.0))) option))
+
+
+; Section: __report
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Расход со временем"
+  'report-guid "55c8ea91859932a3c29c757a4a933c41"
+  'parent-type "b1f15b2052c149df93e698fe85a81ea6"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "b1f15b2052c149df93e698fe85a81ea6" "Expense Over Time")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Расход", based on template "9bf1892805cb4336be6320fe48ce5446"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "9bf1892805cb4336be6320fe48ce5446" "Expense Accounts")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Расход"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(relative . end-this-month)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(relative . start-this-month)))) option))
+
+
+; Section: Accounts
+
+(let ((option (gnc:lookup-option options
+                                 "Accounts"
+                                 "Show Accounts until level")))
+  ((lambda (option) (if option ((gnc:option-setter option) '5))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Plot Height")))
+  ((lambda (option) (if option ((gnc:option-setter option) 550.0))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Maximum Slices")))
+  ((lambda (option) (if option ((gnc:option-setter option) 18.0))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Plot Width")))
+  ((lambda (option) (if option ((gnc:option-setter option) 1000.0))) option))
+
+
+; Section: __report
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Расход"
+  'report-guid "9f41f229bb6d0b0716dd4a2818e8fffe"
+  'parent-type "9bf1892805cb4336be6320fe48ce5446"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "9bf1892805cb4336be6320fe48ce5446" "Expense Accounts")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "Доход время", based on template "44f81bee049b4b3ea908f8dac9a9474e"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "44f81bee049b4b3ea908f8dac9a9474e" "Income Over Time")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(relative . start-cal-year)))) option))
+
+
+; Section: Accounts
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Maximum Bars")))
+  ((lambda (option) (if option ((gnc:option-setter option) 17.0))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Plot Width")))
+  ((lambda (option) (if option ((gnc:option-setter option) 1024.0))) option))
+
+
+; Section: __report
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "Доход время"
+  'report-guid "706524872b9ad84bb349215e60b629ed"
+  'parent-type "44f81bee049b4b3ea908f8dac9a9474e"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "44f81bee049b4b3ea908f8dac9a9474e" "Income Over Time")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "рас-пред", based on template "9bf1892805cb4336be6320fe48ce5446"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "9bf1892805cb4336be6320fe48ce5446" "Expense Accounts")))
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report name")))
+  ((lambda (option) (if option ((gnc:option-setter option) "рас-пред"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "End Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(relative . end-prev-month)))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Start Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) '(relative . start-prev-month)))) option))
+
+
+; Section: Accounts
+
+(let ((option (gnc:lookup-option options
+                                 "Accounts"
+                                 "Show Accounts until level")))
+  ((lambda (option) (if option ((gnc:option-setter option) '5))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Maximum Slices")))
+  ((lambda (option) (if option ((gnc:option-setter option) 18.0))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "Plot Width")))
+  ((lambda (option) (if option ((gnc:option-setter option) 1000.0))) option))
+
+
+; Section: __report
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "рас-пред"
+  'report-guid "2d0a11e6420459fc53b9075d4962feac"
+  'parent-type "9bf1892805cb4336be6320fe48ce5446"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "9bf1892805cb4336be6320fe48ce5446" "Expense Accounts")))
+
