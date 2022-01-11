@@ -18,5 +18,7 @@ xrandr --auto
 #xrandr --output LVDS-1 --auto --primary
 #-right-of VGA-1 --output VGA-1 --auto
 #xrandr --output HDMI-1 --mode 3840x2160 --scale 0.6x0.6 --primary  --right-of eDP-1  --output eDP-1 --auto
+redshift -l 55:37 &
+setxkbmap -layout 'us,ru(winkeys)' -option 'grp_led:scroll,altwin:super_win,grp:rctrl_toggle,compose:ralt'
 awesome
 #lxterminal

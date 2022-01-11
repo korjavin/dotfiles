@@ -17,6 +17,8 @@
     br=branch
     ci=commit -a -m
     cm=commit -m
+    cp=commit -p
+    ap=add -p
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     lgg =log  --graph -n 20 --stat --color --show-notes
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
@@ -41,6 +43,7 @@
 [push]
     default = current
 [core]
+    hooksPath = ~/Projects/git/hooks
     autocrlf = false
     whitespace = cr-at-eol
     # editor = vim
@@ -49,3 +52,16 @@
     helper = cache
 [url "git@g.3pm.ai:"]
     insteadOf = http://g.3pm.ai/
+[url "git@g.3pm.ai:"]
+    insteadOf = https://g.3pm.ai/
+[url "ssh://git@github.com/whalesburg/"]
+    insteadOf = https://github.com/whalesburg/
+[url "git@git.cryptology.com:"]
+    insteadOf = https://git.cryptology.com
+[user]
+	email = e@mail.com
+	name = Korzhavin Ivan
+[pull]
+	ff = only
+[init]
+	defaultBranch = master

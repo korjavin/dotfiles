@@ -24,14 +24,14 @@ DISABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(history-substring-search gitfast last-working-dir sudo docker golang screen kubectl dotenv z tmux safe-paste) # ssh-agent)
+plugins=(history-substring-search gitfast last-working-dir sudo docker golang screen dotenv z tmux safe-paste kubectl) # ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
 
 # Customize to your needs...
 PATH=/usr/local/go/bin:$PATH:/usr/sbin:/sbin:~/Projects/go/bin/:~/bin:
-export EDITOR=vim
+export EDITOR=nvim
 
 bindkey '^W' backward-kill-word
 WORDCHARS='/.-_:'
@@ -63,8 +63,10 @@ export GOPATH=/home/iv/Projects/go
 #export GOROOT=/usr/local/go
 # alias gop='GOPATH=/home/iv/Projects/go:`pwd`'
 alias cdg='cd /home/iv/Projects/go/src'
+export cdg="/home/iv/Projects/go/src"
 alias cdp='cd /home/iv/Projects/go/src/g.3pm.ai'
-alias cdw='cd /home/iv/Projects/go/src/github.com/whalesburg'
+export cdp="/home/iv/Projects/go/src/g.3pm.ai"
+alias cc= "printf '\033[2J\033[3J\033[1;1H'"
 #
 dbus-update-activation-environment --all
 
@@ -72,8 +74,8 @@ dbus-update-activation-environment --all
 ZSH_DOTENV_FILE=.dotenv
 
 export GO11MODULE=on
-export TILLER_NAMESPACE=gitlab-managed-apps
-export GOPRIVATE=git.cryptology.com
+export GOPRIVATE=g.3pm.ai
+export GOFLAGS="-mod=vendor"
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -82,3 +84,6 @@ bindkey "^[[F" end-of-line
 
 setopt HIST_FIND_NO_DUPS
 # setopt HISTORY_SUBSTRING_SEARCH_FUZZY
+export HISTSIZE=2000000
+setopt HIST_REDUCE_BLANKS
+# source <(kaf completion zsh)
