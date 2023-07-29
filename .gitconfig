@@ -1,5 +1,4 @@
 [merge]
-    tool = gvimdiff
     summary = true
 [gui]
     fontui = -family verdana -size 10 -weight bold -slant roman -underline 0 -overstrike 0
@@ -17,7 +16,6 @@
     br=branch
     ci=commit -a -m
     cm=commit -m
-    cp=commit -p
     ap=add -p
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     lgg =log  --graph -n 20 --stat --color --show-notes
@@ -46,7 +44,7 @@
     hooksPath = ~/Projects/git/hooks
     autocrlf = false
     whitespace = cr-at-eol
-    # editor = vim
+    editor = vim
     # pager = "vim -R"
 [credential]
     helper = cache

@@ -87,3 +87,8 @@ setopt HIST_FIND_NO_DUPS
 export HISTSIZE=2000000
 setopt HIST_REDUCE_BLANKS
 # source <(kaf completion zsh)
+#
+#
+# alias vim=nvim
+
+eval "$(starship init zsh)"
